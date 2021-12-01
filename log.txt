@@ -1,37 +1,35 @@
-Deroulement du Chainage avant : 
-La regles declanchee est : si mange_herbe alors non_carnivore
-conclusion ajoutee a la liste des faits  : non_carnivore
+liste des premisses 
+['mange_viande', 'dents_pointues et griffes et yeux_avant', 'mange_herbe', 'mammifere et sabots', 'mammifere et rumine', 'mammifere et carnivore et brun et taches', 'mammifere et carnivore et brun et raies', 'ongule et long_cou et longues_pattes et taches', 'ongule et raies', 'oiseau et long_cou et longues_pattes et noir_et_blanc et non_vole', 'oiseau et nage et noir_et_blanc et non_vole', 'oiseau et vole', 'poils', 'lait', 'plumes', 'vole et pond_oeufs']
+**************************************** 
+liste des conclusions 
+['carnivore', 'carnivore', 'non_carnivore', 'ongule', 'ongule', 'guepard', 'tigre', 'giraffe', 'zebre', 'autruche', 'pingouin', 'albatros', 'mammifere', 'mammifere', 'oiseau', 'oiseau']
+****************************************
+liste des faits 
+['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe']
+**************************************** 
+Deroulement du Chainage Avant : 
+But a inferer: pingouin
+
+La regle declanchee est : 
+si mange_herbe alors non_carnivore
+conclusion ajoutee a la liste des faits  :
+ non_carnivore
 Nouvelle Base des faits 
 ['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore']
 regle supprimee 
 ********** 
-La regles declanchee est : si plumes alors oiseau
-conclusion ajoutee a la liste des faits  : oiseau
+La regle declanchee est : 
+si plumes alors oiseau
+conclusion ajoutee a la liste des faits  :
+ oiseau
 Nouvelle Base des faits 
 ['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore', 'oiseau']
 regle supprimee 
 ********** 
-La regles declanchee est : si oiseau et nage et noir_et_blanc et non_vole alors pingouin
-conclusion ajoutee a la liste des faits  : pingouin
-Nouvelle Base des faits 
-['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore', 'oiseau', 'pingouin']
-regle supprimee 
-********** 
-pingouin est etabliDeroulement du Chainage avant : 
-La regle declanchee est : si mange_herbe alors non_carnivore
-conclusion ajoutee a la liste des faits  : non_carnivore
-Nouvelle Base des faits 
-['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore']
-regle supprimee 
-********** 
-La regle declanchee est : si plumes alors oiseau
-conclusion ajoutee a la liste des faits  : oiseau
-Nouvelle Base des faits 
-['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore', 'oiseau']
-regle supprimee 
-********** 
-La regle declanchee est : si oiseau et nage et noir_et_blanc et non_vole alors pingouin
-conclusion ajoutee a la liste des faits  : pingouin
+La regle declanchee est : 
+si oiseau et nage et noir_et_blanc et non_vole alors pingouin
+conclusion ajoutee a la liste des faits  :
+ pingouin
 Nouvelle Base des faits 
 ['plumes', 'non_vole', 'nage', 'noir_et_blanc', 'mange_herbe', 'non_carnivore', 'oiseau', 'pingouin']
 regle supprimee 

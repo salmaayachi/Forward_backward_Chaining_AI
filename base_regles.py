@@ -10,20 +10,18 @@ class Base_Regles:
         br1= open(file_name,'r')
         text=br1.read()
         self.regles=text.split("\n")
-        #print("liste des regles \n" ,self.regles)
-        #print(len(self.regles))
         for line in self.regles:
             premisse=self.Extract_Premisse(line)
             self.premisses.append(premisse)
             conclusion=self.Extract_Conclusion(line)
             self.conclusions.append(conclusion)
-        print("liste des prémisses \n" ,self.premisses)
-        print("****************************************")
-        print("liste des conclusions \n" ,self.conclusions)
-        print("****************************************")
-        #print(len(self.premisses))
-        #print(len(self.conclusions))
-        #print("liste des regles \n" ,self.regles)
+        #Afficher ces listes dans le fichier log
+        log = open("log.txt", "a")
+        log.write("liste des premisses \n" +str(self.premisses)+"\n")
+        log.write("**************************************** \n")
+        log.write("liste des conclusions \n" +str(self.conclusions)+"\n")
+        log.write("****************************************\n")
+
 
         return self.premisses,self.conclusions,self.regles
 
@@ -41,11 +39,6 @@ class Base_Regles:
         self.regles.pop(index)
         self.premisses.pop(index)
         self.conclusions.pop(index)
-
-    def remove2(self,conclusion,premisse,regle):
-        self.conclusions.remove(conclusion)
-        self.premisses.remove(premisse)
-        self.regles.remove(conclusion)
 
 """def main():
     #file_name=input("Entrer la base de regles")

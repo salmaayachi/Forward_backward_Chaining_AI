@@ -7,8 +7,9 @@ class Base_Faits:
         br1= open(file_name,'r')
         text=br1.read()
         self.faits=text.split("\n")
-        print("liste des faits \n" ,self.faits)
-        print("****************************************")
+        log = open("log.txt", "a")
+        log.write("liste des faits \n" +str(self.faits) +"\n")
+        log.write("**************************************** \n")
 
         return self.faits
 
