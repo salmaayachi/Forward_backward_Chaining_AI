@@ -14,12 +14,13 @@ def Forward_Chaining(goal,BF,BR):
             i=i+1
             cpremisse=premisse
             if BF.check_P_BF(cpremisse):
-                log.write("La regle declanchee est : \n"+ str(BR.regles[(BR.premisses).index(premisse)])+"\n")
+                log.write("La regle declanchee est :"+ str(BR.regles[(BR.premisses).index(premisse)])+"\n")
+                log.write("\n")
                 BF.Add_Fait(BR.conclusions[(BR.premisses).index(premisse)])
-                log.write("conclusion ajoutee a la liste des faits  :\n "+ str(BR.conclusions[(BR.premisses).index(premisse)])+"\n")
-                #print("conclusion ajouté à la liste des faits  : ", BR.conclusions[(BR.premisses).index(premisse)]," index: ", i)
+                log.write("conclusion ajoutee a la liste des faits  :"+ str(BR.conclusions[(BR.premisses).index(premisse)])+"\n")
+                log.write("\n")
                 log.write("Nouvelle Base des faits \n" +str(BF.faits)+"\n")
-                #print(BF.faits)
+                log.write("\n")
                 log.write("regle supprimee \n")
                 log.write("********** \n")
                 BR.Remove_regle((BR.premisses).index(premisse))
@@ -77,7 +78,7 @@ def Backward_Chaining(goal,BF,BR):
                  if len(tr[0])>len(regle_declenchable[0]):
                     regle_declenchable=tr
             log.write("Regle declenchable selon notre critere : \n"+ str(regle_declenchable)+"\n")
-            log.write("****************************\n")
+            log.write("********** \n")
 
 
             valid=True
@@ -96,14 +97,14 @@ def Backward_Chaining(goal,BF,BR):
         print(goal+" non atteint")
 
 
-
-
-
 def main(): 
+    log = open("log.txt", "a")
     BF=Base_Faits()
     BR=Base_Regles()
-    BR.Construct_LP_LC("BR1.txt")
-    BF.Construct_LF("BF1.txt")
+    File_name_BF=input("Donner le fichier de BF souhaité: ")
+    File_name_BR=input("Donner le fichier de BR souhaité: ")
+    BR.Construct_LP_LC(File_name_BR)
+    BF.Construct_LF(File_name_BF)
     goal=input("Donner le but à inférer: ")
     type_chainage=""
     while type_chainage not in ["AR","AV"]:
@@ -112,6 +113,9 @@ def main():
         Forward_Chaining(goal,BF,BR)
     else:
         Backward_Chaining(goal,BF,BR)
-
+    Exit=input("EXIT? yes or no: ")
+    if Exit=="yes":
+            log.truncate(0)
+            log.close()
 if __name__ == "__main__":
     main()
